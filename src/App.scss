@@ -1,3 +1,58 @@
-h1 {
-    color: red;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap');
+
+:root{
+    font-family: 'Monomaniac One', sans-serif;
+
+}
+
+.parent{
+    height: 100vh;
+    width: 100vh;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container{
+    display: grid;
+    grid-auto-columns: 100px 100px 100px 100px;
+    grid-auto-rows: 100px;
+    grid-gap: 10px;
+
+    grid-template-areas: 
+        "display display display display"
+        "clear clear delete delete"
+        ". . . ."
+        ". . . ."
+        ". . . ."
+        "divide zero equal equal";
+  
+
+    .grid-item-display{
+        grid-area: display;
+    }
+    
+    .grid-item-clear{
+        grid-area: clear;
+    }
+
+    .grid-item-delete{
+        grid-area: delete;
+    }
+
+    .grid-tem-divide{
+        grid-area: divide;
+    }
+
+    .grid-item-zero{
+        grid-area: zero;
+    }
+
+    .grid-item-equal{
+        grid-area: equal;
+    }   
+}
+
+
