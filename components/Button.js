@@ -8,7 +8,7 @@ const Button = ({buttonText, color, hoverColor, activeColor}) => {
     const [isActive, setIsActive] = useState(false);
 
     const handleMouseEnter = () => {
-        setHover(true);
+        setHover(true);        
     };
 
     const handleMouseLeave = () => {

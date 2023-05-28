@@ -33,7 +33,7 @@ const App = () => {
 
     buttonInfo.map((button) => {
       info.push(
-        <div className={button.class}>
+        <div key = {button['symbol']}className={button.class}>
           <Button 
             buttonText={button.symbol} 
             color={types[button.type][0]} 
