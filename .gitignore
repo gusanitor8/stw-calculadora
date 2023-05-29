@@ -1,1 +1,10 @@
+## Npm files
 node_modules/*
+
+## firebase files
+.firebase/*
+.firebaserc 
+firebase.json
+
+## build
+dist/*
