@@ -19,10 +19,7 @@ const App = () => {
       setBuffer(buffer.slice(0, -1));
       setResult(result.slice(0, -1));
     }
-    if(result < 0){
-      setResult('ERROR negative');
-      setBuffer('');
-    }
+
     if (result > 999999999){
       setResult('ERROR too big');
       setBuffer('');
@@ -55,6 +52,12 @@ const App = () => {
     console.log('operand', buffer) //borrame
   };
 
+  const plusminus = (symbol) => {
+    performEvaluation();
+    setBuffer(buffer * -1);
+    setResult(result * -1);
+  };
+
   const equal = (symbol) => {
     performEvaluation();    
   }
@@ -71,8 +74,9 @@ const App = () => {
 
 
   const buttonInfo = [
+                      {symbol: '%', class: 'grid-item-module', type: 'type1', fun: operator},
+                      {symbol: '+/-', class: 'grid-item-plusminus', type: 'type1', fun: plusminus},
                       {symbol: 'CLR', class: 'grid-item-clear', type: 'type3', fun: clear},
-                      {symbol: 'DLT', class: 'grid-item-delete', type: 'type3', fun: clear},
                       {symbol: '+', class: 'button', type: 'type1', fun: operator},
                       {symbol: '7', class: 'button', type: 'type2', fun: operand},
                       {symbol: '8', class: 'button', type: 'type2', fun: operand},
@@ -87,6 +91,7 @@ const App = () => {
                       {symbol: '3', class: 'button', type: 'type2', fun: operand},
                       {symbol: '/', class: 'grid-tem-divide', type: 'type1', fun: operator},
                       {symbol: '0', class: 'grid-item-zero', type: 'type2', fun: operand},
+                      {symbol: '.', class: 'grid-item-dot', type: 'type1', fun: operand},
                       {symbol: '=', class: 'grid-item-equal', type: 'type3', fun: equal}];
 
 

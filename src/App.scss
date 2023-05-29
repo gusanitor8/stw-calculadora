@@ -23,11 +23,11 @@
 
     grid-template-areas: 
         "display display display display"
-        "clear clear delete delete"
+        "module plusminus clear clear"
         ". . . ."
         ". . . ."
         ". . . ."
-        "divide zero equal equal";
+        "divide zero dot equal";
   
 
     .grid-item-display{
@@ -52,6 +52,18 @@
 
     .grid-item-equal{
         grid-area: equal;
+    }   
+
+    .grid-item-plusminus{
+        grid-area: plusminus;
+    }
+
+    .grid-item-module{
+        grid-area: module;
+    }
+
+    .grid-item-dot{
+        grid-area: dot;
     }   
 }
 
