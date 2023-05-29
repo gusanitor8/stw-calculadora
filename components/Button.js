@@ -1,11 +1,12 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./Button.scss";
+import { bufferContext } from "../src/App";
 
-const Button = ({buttonText, color, hoverColor, activeColor}) => {
+const Button = ({buttonText, color, hoverColor, activeColor, fun}) => {
     const [styles, setStyles] = useState({});
     const [hover, setHover] = useState(false);
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(false);    
 
     const handleMouseEnter = () => {
         setHover(true);        
@@ -20,6 +21,8 @@ const Button = ({buttonText, color, hoverColor, activeColor}) => {
         setTimeout(() => {
             setIsActive(false);
         }, 200);
+
+        fun(buttonText); // This is the function that is passed in from App.js
     };
 
     useEffect(() => {

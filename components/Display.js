@@ -1,28 +1,23 @@
-import React, {useEffect,useState} from "react";
+import React, {useContext, useEffect,useState} from "react";
 import "./Display.scss";
+import { bufferContext } from "../src/App";
 
 const Display = ({displayText, displayColor}) => {
-    const[display,setDisplay] = useState('');
     const[styles,setStyles] = useState({});   
+    const buffer = useContext(bufferContext);
 
     useEffect(() => {
         setStyles({backgroundColor: displayColor});
     }, [displayColor]);
 
-    useEffect(() => {
-        setDisplay(displayText);
-    }, [displayText]);
+    useEffect(() => {console.log(buffer.result)}, [buffer.result]);
 
-    useEffect(() => {
-        if(display.length > 9){
-            setDisplay('ERROR');
-        }
-    }, [display]);
+
 
     return(
         <>
             <div className="display-container" style={styles} >
-                <h1 className="display-text">{display}</h1>
+                <h1 className="display-text">{buffer.result}</h1>
             </div>
         </>
         );
