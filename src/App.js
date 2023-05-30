@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { evaluate } from 'mathjs'
+import { evaluate, format } from 'mathjs'
 import Button from '../components/Button'
 import Display from '../components/Display'
 
@@ -28,7 +28,8 @@ function App() {
 
   const performEvaluation = () => {
     try {
-      const result = evaluate(buffer.toString())
+      const result1 = evaluate(buffer.toString())
+      const result = format(result1, { precision: 9 })
       setResult(result)
       setBuffer(result)
     } catch (error) {
