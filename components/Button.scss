@@ -1,21 +1,21 @@
-.button-container{    
-    height: 100%;
-    width: 100%;
+.button-container {
+  height: 100%;
+  width: 100%;
 
-    .button-text{
-        all:unset;
+  .button-text {
+    all: unset;
 
-        /*dimension*/
-        height: inherit;
-        width: inherit;
+    /*dimension*/
+    height: inherit;
+    width: inherit;
 
-        /*styles*/ 
-        background-color: red;
-        border-radius: 10px;
-        text-align: center;
-        color: white;
+    /*styles*/
+    background-color: red;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
 
-        /*font*/
-        font-size: 2em;
-    }
+    /*font*/
+    font-size: 2em;
+  }
 }

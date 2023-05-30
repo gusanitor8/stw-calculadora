@@ -1,27 +1,24 @@
-import React, {useContext, useEffect,useState} from "react";
-import "./Display.scss";
-import { bufferContext } from "../src/App";
+import React, { useContext, useEffect, useState } from 'react'
+import './Display.scss'
+import { bufferContext } from '../src/App'
 
-const Display = ({displayText, displayColor}) => {
-    const[styles,setStyles] = useState({});   
-    const buffer = useContext(bufferContext);
+function Display({ displayText, displayColor }) {
+  const [styles, setStyles] = useState({})
+  const buffer = useContext(bufferContext)
 
-    useEffect(() => {
-        setStyles({backgroundColor: displayColor});
-    }, [displayColor]);
+  useEffect(() => {
+    setStyles({ backgroundColor: displayColor })
+  }, [displayColor])
 
-    useEffect(() => {console.log(buffer.result)}, [buffer.result]);
+  useEffect(() => {
+    console.log(buffer.result)
+  }, [buffer.result])
 
+  return (
+    <div className="display-container" style={styles}>
+      <h1 className="display-text">{buffer.result}</h1>
+    </div>
+  )
+}
 
-
-    return(
-        <>
-            <div className="display-container" style={styles} >
-                <h1 className="display-text">{buffer.result}</h1>
-            </div>
-        </>
-        );
-};
-
-
-export default Display;
+export default Display
